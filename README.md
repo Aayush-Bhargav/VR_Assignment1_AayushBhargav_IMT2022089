@@ -105,7 +105,7 @@ For each processed folder, the following files are generated:
 ## Installation
 
 ```bash
-pip install opencv-python numpy
+pip install opencv-python numpy  glob2 shutil
 ```
 
 ## How to Run
