@@ -1,10 +1,10 @@
-
 import cv2
 import numpy as np
 import glob
 import os
 import shutil
 
+# Function to remove black/empty borders from an image by finding the largest contour
 def trim_dark_edges(image): 
     grayscale = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     _, binary = cv2.threshold(grayscale, 1, 255, cv2.THRESH_BINARY)
@@ -15,14 +15,17 @@ def trim_dark_edges(image):
         return image[y:y+h, x:x+w]
     return image
 
+# Function to display feature points on an image for visualization purposes
 def visualize_features(img, features):
     # Use point visualization instead of circles
     return cv2.drawKeypoints(img, features, None, color=(0, 255, 255),flags=cv2.DRAW_MATCHES_FLAGS_DEFAULT)  # Default flag for point markers
 
+# Function to visualize matching features between two images by drawing connecting lines
 def visualize_feature_matches(img1, features1, img2, features2, matched_pairs):
     """Draw connections between matching features in two images"""
     return cv2.drawMatches(img1, features1, img2, features2, matched_pairs, None,matchColor=(0, 255, 255), singlePointColor=(0, 0, 255),flags=cv2.DrawMatchesFlags_DEFAULT)
 
+# Function to detect SIFT features in a list of images and save visualizations of the detected features
 def detect_features(image_list, output_folder):
     sift_detector = cv2.SIFT_create(nfeatures=2000, contrastThreshold=0.04)
     features_data = []
@@ -37,12 +40,14 @@ def detect_features(image_list, output_folder):
         
     return features_data
 
+# Function to create a fresh output directory, removing it first if it already exists
 def prepare_output_directory(folder_path):
     """Creates or refreshes the output directory"""
     if os.path.exists(folder_path):
         shutil.rmtree(folder_path)
     os.makedirs(folder_path)
 
+# Function to load all image files from a specified path pattern
 def load_input_images(glob_pattern):
     """Loads images from the specified pattern"""
     file_paths = sorted(glob.glob(glob_pattern))
@@ -57,6 +62,7 @@ def load_input_images(glob_pattern):
             
     return loaded_images
 
+# Function to resize images to a standard width while maintaining aspect ratio
 def standardize_image_sizes(images, target_width=1200):
     """Resizes images to a standard width while maintaining aspect ratio"""
     resized_images = []
@@ -72,6 +78,7 @@ def standardize_image_sizes(images, target_width=1200):
             
     return resized_images
 
+# Function to blend a sequence of images together to create a panorama using feature matching and homography
 def blend_images_sequential(image_list, features_data, output_folder):
     feature_matcher = cv2.BFMatcher(cv2.NORM_L2)
     
@@ -212,11 +219,13 @@ def blend_images_sequential(image_list, features_data, output_folder):
     
     return composite
 
+# Function to generate a panorama from a list of images by extracting features and blending them together
 def generate_panorama(images, output_dir):
     """Extract features and stitch images into a panorama"""
     features_data = detect_features(images, output_dir)
     return blend_images_sequential(images, features_data, output_dir)
 
+# Function to process a single folder of images, creating a panorama from all JPG files found
 def process_folder(folder_name):
     """
     Process a single folder of images and generate a panorama.
@@ -248,6 +257,7 @@ def process_folder(folder_name):
     
     print(f"Panorama generation complete for {folder_name}. Results saved in '{results_folder}' directory")
 
+# Main function that orchestrates the panorama stitching process for multiple folders
 def main():
     """
     Main function to execute the panorama stitching pipeline for both folders.
