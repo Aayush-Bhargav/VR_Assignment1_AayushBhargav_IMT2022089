@@ -112,7 +112,7 @@ pip install opencv-python numpy
 
 ### Clone the repository
 ```
-https://github.com/Aayush-Bhargav/VR_Assignment1_AayushBhargav_IMT2022089.git
+git clone https://github.com/Aayush-Bhargav/VR_Assignment1_AayushBhargav_IMT2022089.git
 ```
 ### Navigate to the right directory
 ```
