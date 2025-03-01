@@ -111,7 +111,8 @@ pip install opencv-python numpy
 ## How to Run
 
 ### Clone the repository
-```https://github.com/Aayush-Bhargav/VR_Assignment1_AayushBhargav_IMT2022089.git
+```
+https://github.com/Aayush-Bhargav/VR_Assignment1_AayushBhargav_IMT2022089.git
 ```
 ### Navigate to the right directory
 ```
