@@ -116,6 +116,7 @@ git clone https://github.com/Aayush-Bhargav/VR_Assignment1_AayushBhargav_IMT2022
 ```
 ### Navigate to the right directory
 ```
+cd VR_Assignment1_AayushBhargav_IMT2022089
 cd IMT2022089_VR_Assignment1
 ```
 ### Coin Detection
