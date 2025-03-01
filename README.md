@@ -48,18 +48,18 @@ IMT2022089_VR_ASSIGNMENT1/
 
 This script processes images containing coins and performs three main tasks:
 
-### a. Coin Detection (2 Marks)
+### a. Coin Detection 
 - Uses multiple edge detection techniques (Canny, Sobel, Laplacian)
 - Visualizes detected coins by outlining them in the original image
 - Outputs edge maps to the EdgeDetection_Results folders
 
-### b. Coin Segmentation (3 Marks)
+### b. Coin Segmentation
 - Extracts each individual coin from the image
 - Uses adaptive thresholding and contour detection
 - Outputs individual coin images to the Processed_Coins folders
-- Creates a visualization overlay (detected_coins_overlay.png) showing all detected coins
+- Creates a visualization overlay (detected_coins_overlay.png) in the Processed_Coins folder showing all detected coins
 
-### c. Coin Counting (2 Marks)
+### c. Coin Counting
 - Counts the total number of coins in each image
 - Filters out non-coin objects using size and circularity criteria
 - Prints the count to the console
@@ -112,13 +112,13 @@ pip install opencv-python numpy
 
 ### Coin Detection
 ```bash
-python coins.py
+python3 coins.py
 ```
 This will process all three images in the Images folder and output the results to the respective folders.
 
 ### Image Stitching
 ```bash
-python Stitching.py
+python3 Stitching.py
 ```
 This will process the image sets in Stitching1 and Stitching2 folders and create panoramic images.
 
