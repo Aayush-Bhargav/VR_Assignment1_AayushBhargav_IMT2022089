@@ -8,40 +8,45 @@ This repository contains Python scripts for performing two computer vision tasks
 
 ```
 IMT2022089_VR_ASSIGNMENT1/
-├── Assignment1/
-│   ├── EdgeDetection_Results_Image1/  # Output from coin detection for Image1
-│   ├── EdgeDetection_Results_Image2/  # Output from coin detection for Image2
-│   ├── EdgeDetection_Results_Image3/  # Output from coin detection for Image3
-│   ├── Images/                        # Contains input images for coin detection
-│   │   ├── Image1.jpeg
-│   │   ├── Image2.jpeg
-│   │   └── Image3.jpeg
-│   ├── PanoramaResults_Stitching1/    # Stitching results for folder Stitching1
-│   │   ├── composite_0.jpg            # Initial composite (first image)
-│   │   ├── composite_1.jpg            # Result after blending second image
-│   │   ├── image_1_with_features.jpg  # First image with detected features
-│   │   ├── image_2_with_features.jpg  # Second image with detected features
-│   │   ├── matches_1to2.jpg           # Visualization of matches between images
-│   │   └── stitched_panorama_Stitching1.jpg  # Final panorama result
-│   ├── PanoramaResults_Stitching2/    # Stitching results for folder Stitching2
-│   │   ├── composite_0.jpg            # Initial composite (first image)
-│   │   ├── composite_1.jpg            # Result after blending second image
-│   │   ├── composite_2.jpg            # Result after blending third image
-│   │   ├── image_1_with_features.jpg  # First image with detected features
-│   │   ├── image_2_with_features.jpg  # Second image with detected features
-│   │   ├── image_3_with_features.jpg  # Third image with detected features
-│   │   ├── matches_1to2.jpg           # Matches between first and second images
-│   │   ├── matches_2to3.jpg           # Matches between second and third images
-│   │   └── stitched_panorama_Stitching2.jpg  # Final panorama result
-│   ├── Processed_Coins_Image1/        # Contains extracted coins from Image1
-│   ├── Processed_Coins_Image2/        # Contains extracted coins from Image2
-│   ├── Processed_Coins_Image3/        # Contains extracted coins from Image3
-│   ├── Stitching1/                    # Contains 2 split images for panorama stitching
-│   │   ├── *.jpg
-│   └── Stitching2/                    # Contains 3 split images for panorama stitching
-│       ├── *.jpg
-├── coins.py                           # Script for coin detection and analysis
-└── Stitching.py                       # Script for panorama creation
+├── EdgeDetection_Results_Image1/  # Output from coin detection for Image1
+├── EdgeDetection_Results_Image2/  # Output from coin detection for Image2
+├── EdgeDetection_Results_Image3/  # Output from coin detection for Image3
+├── Images/                        # Contains input images for coin detection
+│   ├── Image1.jpeg
+│   ├── Image2.jpeg
+│   └── Image3.jpeg
+├── PanoramaResults_Stitching1/    # Stitching results for folder Stitching1
+│   ├── composite_0.jpg            # Initial composite (first image)
+│   ├── composite_1.jpg            # Result after blending second image
+│   ├── image_1_with_features.jpg  # First image with detected features
+│   ├── image_2_with_features.jpg  # Second image with detected features
+│   ├── matches_1to2.jpg           # Visualization of matches between images
+│   └── stitched_panorama_Stitching1.jpg  # Final panorama result
+├── PanoramaResults_Stitching2/    # Stitching results for folder Stitching2
+│   ├── composite_0.jpg            # Initial composite (first image)
+│   ├── composite_1.jpg            # Result after blending second image
+│   ├── composite_2.jpg            # Result after blending third image
+│   ├── image_1_with_features.jpg  # First image with detected features
+│   ├── image_2_with_features.jpg  # Second image with detected features
+│   ├── image_3_with_features.jpg  # Third image with detected features
+│   ├── matches_1to2.jpg           # Matches between first and second images
+│   ├── matches_2to3.jpg           # Matches between second and third images
+│   └── stitched_panorama_Stitching2.jpg  # Final panorama result
+├── Processed_Coins_Image1/        # Contains extracted coins from Image1
+│   ├── ExtractedCoins/
+│   └── detected_coins_overlay.png
+├── Processed_Coins_Image2/        # Contains extracted coins from Image2
+│   ├── ExtractedCoins/
+│   └── detected_coins_overlay.png
+├── Processed_Coins_Image3/        # Contains extracted coins from Image3
+│   ├── ExtractedCoins/
+│   └── detected_coins_overlay.png
+├── Stitching1/                    # Contains 2 split images for panorama stitching
+│   ├── *.jpg
+├── Stitching2/                    # Contains 3 split images for panorama stitching
+│   ├── *.jpg
+├── coins.py                       # Script for coin detection and analysis
+└── Stitching.py                   # Script for panorama creation
 ```
 
 ## Coin Detection and Analysis (coins.py)
